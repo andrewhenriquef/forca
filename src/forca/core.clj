@@ -12,7 +12,7 @@
 (defn perdeu [](print " você perdeu\n --->"))
 (defn ganhou [](print " você ganhou\n --->"))
 
-(defn breakingLines [](print "\n"))
+;(defn breakingLines [](print "\n"))
 
 
 (defn letras-faltantes [palavra acertos]
@@ -43,15 +43,15 @@
 ;      (breakingLines)
 ;      (jogo (dec vidas)))))
 
-(defn fib[n]
-  (if (= n 0) 0
-    (if (= n 1) 1
-     (+ (fib (- n 1)) (fib (- n 2))))))
+; (defn fib[n]
+;   (if (= n 0) 0
+;     (if (= n 1) 1
+;      (+ (fib (- n 1)) (fib (- n 2))))))
 
-(defn pow3
-  [x]
-  (* x
-    (Math/pow 2 x)))
+; (defn pow3
+;   [x]
+;   (* x
+;     (Math/pow 2 x)))
 
 (defn -main
   "I don't do a whole lot ... yet."
