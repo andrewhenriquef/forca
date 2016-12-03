@@ -14,6 +14,14 @@
 
 ;(defn breakingLines [](print "\n"))
 
+; exercise to know if a letter is in conj palavra
+;(def palavra #{"A" "L" "U" "R"})
+;(contains? palavra "A")
+
+
+;(map (fn [letra](contains? (str letra)))palavra)
+
+(map (fn [letra] (contains? (str letra)))palavra)
 
 (defn letras-faltantes [palavra acertos]
   (remove (fn [letra] (contains? acertos (str letra))) palavra))
