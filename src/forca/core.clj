@@ -32,6 +32,9 @@
   )
 )
 
+;filter list number < 2 or > 4 ;;; 1, 5
+;(filter (fn [x](or (< x 2)(> x 4)))numeros)
+
 ;(require '[forca.core :as forca] :reload)
 
 
