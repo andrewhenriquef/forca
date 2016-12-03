@@ -1,6 +1,12 @@
 (ns forca.core
   (:gen-class))
 
+
+(def numeros [1 2 3 4 5])
+(def carros [50000.0 60000.0])
+
+;(remove (fn [x] (= (rem x 2) 1)) numeros)
+
 (def total-de-vidas 6)
 
 (defn perdeu [](print " você perdeu\n --->"))
@@ -8,14 +14,25 @@
 
 (defn breakingLines [](print "\n"))
 
-(defn acertou-a-palavra-toda? [palavra acertos] true)
+
+(defn letras-faltantes [palavra acertos]
+  (remove (fn [letra] (contains? acertos (str letra))) palavra))
+
+;verifica se a lista esta vazia
+(defn acertou-a-palavra-toda? [palavra acertos]
+  (empty? (letras-faltantes palavra acertos)))
 
 (defn jogo [vidas palavra acertos]
- (if (= vidas 0)
-  (perdeu)
-  (if (acertou-a-palavra-toda? palavra acertos)
+  (if (= vidas 0)
+    (perdeu)
+    (if (acertou-a-palavra-toda? palavra acertos)
       (ganhou)
-      (print "Chuta, amigo!"))))
+      (print "Chuta, amigo!")
+    )
+  )
+)
+
+;(require '[forca.core :as forca] :reload)
 
 
 ; (defn jogo [vidas]
