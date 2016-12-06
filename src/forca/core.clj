@@ -17,6 +17,7 @@
 
 (defn acertou? [chute palavra] (.contains palavra chute))
 
+(declare avalia-chute)
 
 (defn jogo [vidas palavra acertos]
     (if (= vidas 0)
@@ -25,10 +26,10 @@
             (ganhou)
             (avalia-chute (le-letra!) vidas palavra acertos))))
 
-; (defn avalia-chute [chute vidas palavra acertos]
-;   (if (acertou? chute palavra)
-;    (jogo vidas palavra (conj acertos chute))
-;    (jogo (dec vidas) palavra acertos)))
+(defn avalia-chute [chute vidas palavra acertos]
+  (if (acertou? chute palavra)
+   (jogo vidas palavra (conj acertos chute))
+   (jogo (dec vidas) palavra acertos)))
 
 
 (defn -main
