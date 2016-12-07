@@ -2,6 +2,7 @@
   (:gen-class))
 
 (def total-de-vidas 6)
+(def palavra-secreta "MELE")
 
 (defn perdeu [] (print "Você perdeu!"))
 
@@ -40,11 +41,17 @@
             (println "Errou a letra !")
             (recur (dec vidas) palavra acertos))))))
 
-(defn -main
-  "I don't do a whole lot ... yet."
-  [& args]
-  (println "Hello, World!"))
 
+(defn comeca-o-jogo [] (jogo 6 palavra-secreta #{}))
+
+(defn -main [& args]
+ (comeca-o-jogo))
+
+;Listas
+; (->> carros
+;   (map (fn [x] (- x 200)))
+;   (map (fn [x] (* x 2)))
+;   (reduce (fn [acc n](+ acc n))))
 
 
 ;recursive fibonacci
